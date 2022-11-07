@@ -1,0 +1,291 @@
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash
+$ touch index.html about.html contact.html
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash
+$ git status
+fatal: not a git repository (or any of the parent directories): .gi
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash
+$ git init
+Initialized empty Git repository in C:/Users/hp/Desktop/gitbash/.gi
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        about.html
+        contact.html
+        index.html
+
+nothing added to commit but untracked files present (use "git add"
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git branch
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git branch --all
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git branch -all
+error: did you mean `--all` (with two dashes)?
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git branch --all
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git add .
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   about.html
+        new file:   contact.html
+        new file:   index.html
+
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git commit -m "index,contact,about created"
+[master (root-commit) 0c50814] index,contact,about created
+ 3 files changed, 3 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 contact.html
+ create mode 100644 index.html
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git branch
+* master
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git log
+commit 0c5081470e6bffcfaf1425c60780278319303117 (HEAD -> master)
+Author: Shivam <shivamdixit.95800@gmail.com>
+Date:   Mon Nov 7 08:24:46 2022 +0530
+
+    index,contact,about created
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git branch dev
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git branch tester
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git branch
+  dev
+* master
+  tester
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git branch --all
+  dev
+* master
+  tester
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git checkout dev
+Switched to branch 'dev'
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git branch
+* dev
+  master
+  tester
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git help branch
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git branch -d tester
+Deleted branch tester (was 0c50814).
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git branch
+* dev
+  master
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git branch tester
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git branch
+* dev
+  master
+  tester
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git log
+commit 0c5081470e6bffcfaf1425c60780278319303117 (HEAD -> dev, teste
+Author: Shivam <shivamdixit.95800@gmail.com>
+Date:   Mon Nov 7 08:24:46 2022 +0530
+
+    index,contact,about created
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git status
+On branch dev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working direct
+        modified:   contact.html
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git status
+On branch dev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working direct
+        modified:   about.html
+        modified:   contact.html
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git commit "Files added by developer"
+error: pathspec 'Files added by developer' did not match any file(s
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git add .
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git commit -m "Files added by developer"
+[dev e5021b7] Files added by developer
+ 3 files changed, 4 insertions(+), 2 deletions(-)
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git log
+commit e5021b7703d1de62e0402b009a45e23f8b724980 (HEAD -> dev)
+Author: Shivam <shivamdixit.95800@gmail.com>
+Date:   Mon Nov 7 08:45:45 2022 +0530
+
+    Files added by developer
+
+commit 0c5081470e6bffcfaf1425c60780278319303117 (tester, master)
+Author: Shivam <shivamdixit.95800@gmail.com>
+Date:   Mon Nov 7 08:24:46 2022 +0530
+
+    index,contact,about created
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ touch gallery.html
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git add gallery.html
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   gallery.html
+
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git commit -m "gallery file added"
+[dev b89eab7] gallery file added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 gallery.html
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git log
+commit b89eab71673bc2b8ba347d606aa48f9287c72115 (HEAD -> dev)
+Author: Shivam <shivamdixit.95800@gmail.com>
+Date:   Mon Nov 7 08:50:18 2022 +0530
+
+    gallery file added
+
+commit e5021b7703d1de62e0402b009a45e23f8b724980
+Author: Shivam <shivamdixit.95800@gmail.com>
+Date:   Mon Nov 7 08:45:45 2022 +0530
+
+    Files added by developer
+
+commit 0c5081470e6bffcfaf1425c60780278319303117 (tester, master)
+Author: Shivam <shivamdixit.95800@gmail.com>
+Date:   Mon Nov 7 08:24:46 2022 +0530
+
+    index,contact,about created
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git checkout master
+Switched to branch 'master'
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git branch
+  dev
+* master
+  tester
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git merge dev
+Updating 0c50814..b89eab7
+Fast-forward
+ about.html   | 2 +-
+ contact.html | 3 ++-
+ gallery.html | 1 +
+ index.html   | 1 +
+ 4 files changed, 5 insertions(+), 2 deletions(-)
+ create mode 100644 gallery.html
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git add .
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git commit -m "merge with dev"
+On branch master
+nothing to commit, working tree clean
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git log
+commit b89eab71673bc2b8ba347d606aa48f9287c72115 (HEAD -> master, dev)
+Author: Shivam <shivamdixit.95800@gmail.com>
+Date:   Mon Nov 7 08:50:18 2022 +0530
+
+    gallery file added
+
+commit e5021b7703d1de62e0402b009a45e23f8b724980
+Author: Shivam <shivamdixit.95800@gmail.com>
+Date:   Mon Nov 7 08:45:45 2022 +0530
+
+    Files added by developer
+
+commit 0c5081470e6bffcfaf1425c60780278319303117 (tester)
+Author: Shivam <shivamdixit.95800@gmail.com>
+Date:   Mon Nov 7 08:24:46 2022 +0530
+
+    index,contact,about created
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (master)
+$ git checkout dev
+Switched to branch 'dev'
+
+hp@LAPTOP-BAU92QN4 MINGW64 ~/Desktop/gitbash (dev)
+$ git checkout master
+Switched to branch 'master'
